@@ -11,7 +11,7 @@ export function PropertyCard({ property }: { property: Property }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg">
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl">
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
         <Link href={`/annonces/${property.id}`}>
@@ -27,7 +27,7 @@ export function PropertyCard({ property }: { property: Property }) {
         {/* Badges */}
         <div className="absolute left-3 top-3 flex gap-2">
           <span className={cn(
-            "rounded-md px-2.5 py-1 text-xs font-semibold",
+            "rounded-full px-3 py-1 text-xs font-semibold shadow-sm",
             property.transaction === "vente"
               ? "bg-primary text-primary-foreground"
               : "bg-accent text-accent-foreground"
@@ -35,7 +35,7 @@ export function PropertyCard({ property }: { property: Property }) {
             {property.transaction === "vente" ? "Vente" : "Location"}
           </span>
           {property.isFeatured && (
-            <span className="rounded-md bg-foreground/80 px-2.5 py-1 text-xs font-semibold text-background">
+            <span className="rounded-full bg-foreground/80 px-3 py-1 text-xs font-semibold text-background">
               En vedette
             </span>
           )}
@@ -53,7 +53,7 @@ export function PropertyCard({ property }: { property: Property }) {
         {/* DPE Badge */}
         <div className="absolute bottom-3 left-3">
           <span className={cn(
-            "rounded-md px-2 py-0.5 text-xs font-bold text-card",
+            "rounded-full px-2.5 py-0.5 text-xs font-bold text-card shadow-sm",
             property.dpe === "A" && "bg-green-500",
             property.dpe === "B" && "bg-green-400",
             property.dpe === "C" && "bg-yellow-400",
@@ -68,7 +68,7 @@ export function PropertyCard({ property }: { property: Property }) {
       </div>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex flex-1 flex-col p-5">
         {/* Price */}
         <div className="mb-1">
           <span className="text-xl font-bold text-foreground">
