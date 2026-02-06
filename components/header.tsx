@@ -17,11 +17,11 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 shadow-sm backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary shadow-sm">
             <HomeIcon className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="text-xl font-bold tracking-tight text-foreground font-sans">ImmoMarket</span>
@@ -49,21 +49,21 @@ export function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <Link
             href="/dashboard/favoris"
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+            className="flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary/70 hover:text-foreground"
             aria-label="Mes favoris"
           >
             <HeartIcon className="h-5 w-5" />
           </Link>
           <Link
             href="/connexion"
-            className="flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+            className="flex items-center gap-2 rounded-lg border border-border/70 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:bg-secondary/70"
           >
             <UserIcon className="h-4 w-4" />
             Se connecter
           </Link>
           <Link
             href="/publier"
-            className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
           >
             <PlusIcon className="h-4 w-4" />
             Deposer une annonce
@@ -73,7 +73,7 @@ export function Header() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-foreground md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-secondary/70 md:hidden"
           aria-label="Menu"
         >
           {mobileMenuOpen ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
