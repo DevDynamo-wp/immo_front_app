@@ -3,9 +3,9 @@ export function cn(...classes: (string | boolean | undefined | null)[]) {
 }
 
 export function formatPrice(price: number): string {
-  return new Intl.NumberFormat("fr-FR", {
+  return new Intl.NumberFormat("fr-BJ", {
     style: "currency",
-    currency: "EUR",
+    currency: "XOF",
     maximumFractionDigits: 0,
   }).format(price);
 }
