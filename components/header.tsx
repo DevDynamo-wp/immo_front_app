@@ -62,6 +62,12 @@ export function Header() {
             Se connecter
           </Link>
           <Link
+            href="/admin"
+            className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm font-medium text-red-700 transition-colors hover:bg-red-100"
+          >
+            Admin
+          </Link>
+          <Link
             href="/publier"
             className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
           >
